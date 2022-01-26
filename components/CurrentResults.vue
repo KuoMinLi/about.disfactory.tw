@@ -279,7 +279,7 @@ export default {
     }
 
     const theLastCity = computed(() => {
-      return reportRates.value[reportRates.value.length - 1]?.city || ''
+      return reportRates.value[0]?.city || ''
     })
 
     return {
