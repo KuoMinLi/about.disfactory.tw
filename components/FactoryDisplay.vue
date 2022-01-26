@@ -93,7 +93,7 @@ export default {
   setup(_, { root: { context: ctx } }) {
     async function share() {
       const text =
-        '🧧我肚子裡的年菜有被工廠加料嗎？🧧\n\r #農地違章工廠 #即報即拆 #拒絕污染 #加入回報 #disfactory'
+        '🧧我肚子裡的年菜有被工廠加料嗎？🧧\n\r #我肚子裡的年菜有被工廠加料嗎 #農地違章工廠 #即報即拆 #拒絕污染 #加入回報 #disfactory'
       const url = document.location.href
       const copiedText = `${text}\n\r${url}`
 
