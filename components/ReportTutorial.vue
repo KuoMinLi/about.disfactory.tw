@@ -1,23 +1,37 @@
 <template>
   <div class="report-tutorial">
     <BaseSubtitle
-      text="簡單三步驟協助回報農地違章工廠"
+      text="兩種方式，三個步驟"
       class="report-tutorial__base-subtitle"
     />
-
-    <div class="steps">
-      <div v-for="step in steps" :key="step.num" class="step">
-        <div class="title">
-          <div class="num">{{ step.num }}</div>
-          <p>{{ step.title }}</p>
+    <div class="border-steps">
+      <div class="title-steps">
+        <div class="title-steps-text">協助回報違章工廠</div>
+      </div>
+      <div class="steps">
+        <div v-for="step in steps" :key="step.num" class="step">
+          <div class="title">
+            <div class="num">{{ step.num }}</div>
+            <p>{{ step.title }}</p>
+          </div>
+          <picture>
+            <source
+              type="image/webp"
+              :srcset="require(`~/assets/imgs/${step.imgName}.webp`)"
+            />
+            <img :src="require(`~/assets/imgs/${step.imgName}.png`)" alt="" />
+          </picture>
         </div>
-        <picture>
-          <source
-            type="image/webp"
-            :srcset="require(`~/assets/imgs/${step.imgName}.webp`)"
-          />
-          <img :src="require(`~/assets/imgs/${step.imgName}.png`)" alt="" />
-        </picture>
+      </div>
+
+      <div class="button-border">
+        <a
+          href="https://bit.ly/39WGOhR"
+          target="_blank"
+          rel="noopener"
+          @click="$ga.event('introduction', 'go2report', 'intro')"
+          >新增可疑工廠</a
+        >
       </div>
     </div>
 
@@ -39,14 +53,6 @@
           傳統的檢舉需要留下個人資料，且程序往往複雜。本系統協助你快速、匿名檢舉。簡單三步驟回報，還不用擔心被找碴。
         </p>
       </div>
-
-      <a
-        href="https://bit.ly/39WGOhR"
-        target="_blank"
-        rel="noopener"
-        @click="$ga.event('introduction', 'go2report', 'intro')"
-        >新增可疑工廠</a
-      >
     </div>
   </div>
 </template>
@@ -91,7 +97,7 @@ export default {
   text-align: center;
   background-color: #fbfdf0;
   @include media-breakpoint-up(lg) {
-    padding: 80px 40px;
+    padding: 60px 40px 80px 40px;
   }
 
   &__base-subtitle {
@@ -102,13 +108,66 @@ export default {
   }
 }
 
+.border-steps {
+  border: 5px solid #eaf3bf;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 83px;
+
+  @include media-breakpoint-up(xl) {
+    margin-left: 146px;
+    margin-right: 146px;
+  }
+}
+
+.button-border {
+  transform: translateY(27px);
+}
+
+.title-steps {
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    max-width: 1127px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media only screen and (min-width: 1600px) {
+    max-width: 1151px;
+  }
+}
+
+.title-steps-text {
+  //styleName: LandingPage / heading / M;
+  display: inline-block;
+  background: #fbfdf0;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0.8550000190734863px;
+  text-align: center;
+  transform: translateY(-23px);
+  padding: 1px 12px;
+  @include media-breakpoint-up(lg) {
+    margin-left: 44px;
+  }
+
+  @media only screen and (min-width: 1550px) {
+    margin-left: unset;
+  }
+}
+
 .steps {
   @include media-breakpoint-up(lg) {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1127px;
-    margin: 0 auto 56px auto;
+    margin: 0 auto 0 auto;
+    padding-left: 56px;
+    padding-right: 56px;
+    // margin-left: 56px;
+    // margin-right: 56px;
   }
 }
 
