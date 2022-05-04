@@ -36,13 +36,6 @@
           rel="noopener"
           >在哪裡？！</a
         >
-        <a
-          class="petition"
-          href="https://bit.ly/3FShGWe"
-          target="_blank"
-          rel="noopener"
-          >連署給政府壓力</a
-        >
       </div>
     </div>
 
@@ -297,9 +290,8 @@ export default {
 .actions {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 550px;
+  justify-content: space-between;
+  max-width: 325px;
   margin: 0 auto;
   margin-bottom: 40px;
   @include media-breakpoint-up(md) {
@@ -317,8 +309,7 @@ export default {
 }
 
 button,
-.where,
-.petition {
+.where {
   border-radius: 55px;
   @media (hover: hover) {
     transition: background-color 0.2s, color 0.2s;
@@ -357,7 +348,7 @@ button {
 .where {
   background-color: #cde9e4;
   border: 2px solid #2b4754;
-  margin: 0 6px;
+  margin-left: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -365,33 +356,6 @@ button {
   @media (hover: hover) {
     &:hover {
       background-color: #96d0c6;
-    }
-  }
-}
-
-.petition {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 15px;
-  height: 54px;
-  box-sizing: border-box;
-  width: 200px;
-  background-color: #fa6b62;
-  border: 2px solid #b83b3b;
-  margin-left: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  @media (min-width: 568px) and (max-width: 991px) {
-    margin-top: 0;
-  }
-  @media (min-width: 1181px) {
-    margin-top: 0;
-  }
-  @media (hover: hover) {
-    &:hover {
-      background-color: #ec554c;
     }
   }
 }
