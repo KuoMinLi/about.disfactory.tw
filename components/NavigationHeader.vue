@@ -24,18 +24,18 @@
             </li>
           </ul>
           <a
-            href="https://bit.ly/2LrmHyP"
+            href="https://bit.ly/3kESSsQ"
             target="_blank"
             rel="noopener"
-            @click="$ga.event('navigator', 'go2report', 'navigator')"
-            >回報</a
+            @click="$ga.event('navigator', 'go2reportheader', 'navigator')"
+            >拍照回報</a
           >
           <a
             class="go2spotdiff"
             href="https://bit.ly/3vFXXaj"
             target="_blank"
             rel="noopener"
-            @click="$ga.event('navigator', 'go2spotdiff', 'navigator')"
+            @click="$ga.event('navigator', 'go2spotdiffheader', 'navigator')"
             >鍵盤參與</a
           >
         </nav>
@@ -59,11 +59,11 @@
           </li>
           <li>
             <a
-              href="https://bit.ly/2LrmHyP"
+              href="https://bit.ly/3kESSsQ"
               target="_blank"
               rel="noopener"
-              @click="$ga.event('navigator', 'go2report', 'navigator')"
-              >回報</a
+              @click="$ga.event('navigator', 'go2reportheader', 'navigator')"
+              >拍照回報</a
             >
           </li>
           <li>
@@ -72,7 +72,7 @@
               href="https://bit.ly/3vFXXaj"
               target="_blank"
               rel="noopener"
-              @click="$ga.event('navigator', 'go2spotdiff', 'navigator')"
+              @click="$ga.event('navigator', 'go2spotdiffheader', 'navigator')"
               >鍵盤參與</a
             >
           </li>
@@ -220,12 +220,15 @@ a {
 
   li {
     margin-right: 32px;
+    &:last-child {
+      margin-right: 17px;
+    }
   }
 
   a {
     border-radius: 24px;
     font-size: 16px;
-    padding: 4px 20px;
+    padding: 4px 16px;
   }
 }
 
