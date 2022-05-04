@@ -30,6 +30,13 @@
             @click="$ga.event('navigator', 'go2report', 'navigator')"
             >回報</a
           >
+          <a
+            href="https://bit.ly/3vFXXaj"
+            target="_blank"
+            rel="noopener"
+            @click="$ga.event('navigator', 'go2spotdiff', 'navigator')"
+            >鍵盤參與</a
+          >
         </nav>
 
         <div class="menu-icon" @click="toggleSidebar">
@@ -165,16 +172,23 @@ li {
   cursor: pointer;
   user-select: none;
 }
-
+/* stylelint-disable no-descending-specificity */
 a {
   border: 2px solid #697f01;
   letter-spacing: 0.7px;
   color: #697f01;
   font-weight: 700;
   transition: background-color 0.2s;
-
   &:hover {
     background-color: #eaf3bf;
+  }
+  & + a {
+    border: 2px solid #107393;
+    color: #107393;
+    margin-left: 17px;
+    &:hover {
+      background-color: #e5f3f3;
+    }
   }
 }
 
