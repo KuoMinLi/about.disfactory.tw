@@ -31,6 +31,7 @@
             >回報</a
           >
           <a
+            class="go2spotdiff"
             href="https://bit.ly/3vFXXaj"
             target="_blank"
             rel="noopener"
@@ -56,14 +57,26 @@
           >
             {{ item.text }}
           </li>
+          <li>
+            <a
+              href="https://bit.ly/2LrmHyP"
+              target="_blank"
+              rel="noopener"
+              @click="$ga.event('navigator', 'go2report', 'navigator')"
+              >回報</a
+            >
+          </li>
+          <li>
+            <a
+              class="go2spotdiff"
+              href="https://bit.ly/3vFXXaj"
+              target="_blank"
+              rel="noopener"
+              @click="$ga.event('navigator', 'go2spotdiff', 'navigator')"
+              >鍵盤參與</a
+            >
+          </li>
         </ul>
-        <a
-          href="https://bit.ly/2LrmHyP"
-          target="_blank"
-          rel="noopener"
-          @click="$ga.event('navigator', 'go2report', 'navigator')"
-          >回報</a
-        >
       </div>
     </transition>
   </header>
@@ -183,12 +196,14 @@ a {
     background-color: #eaf3bf;
   }
   & + a {
-    border: 2px solid #107393;
-    color: #107393;
     margin-left: 17px;
-    &:hover {
-      background-color: #e5f3f3;
-    }
+  }
+}
+.go2spotdiff {
+  color: #107393;
+  border: 2px solid #107393;
+  &:hover {
+    background-color: #e5f3f3;
   }
 }
 
@@ -278,15 +293,20 @@ svg {
   li {
     margin-bottom: 28px;
 
-    &:last-child {
+    &:nth-child(5) {
       margin-bottom: 36px;
     }
   }
-
   a {
+    display: block;
+    width: 144px;
+    border: 2px solid #697f01;
+    box-sizing: border-box;
     border-radius: 35px;
-    font-size: 25px;
-    padding: 14px 48px;
+    font-size: 19px;
+    line-height: 28px;
+    padding: 7px 19px;
+    text-align: center;
   }
 }
 
