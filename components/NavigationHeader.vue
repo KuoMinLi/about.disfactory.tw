@@ -24,11 +24,19 @@
             </li>
           </ul>
           <a
-            href="https://bit.ly/2LrmHyP"
+            href="https://bit.ly/3kESSsQ"
             target="_blank"
             rel="noopener"
-            @click="$ga.event('navigator', 'go2report', 'navigator')"
-            >回報</a
+            @click="$ga.event('navigator', 'go2reportheader', 'navigator')"
+            >拍照回報</a
+          >
+          <a
+            class="go2spotdiff"
+            href="https://bit.ly/3vFXXaj"
+            target="_blank"
+            rel="noopener"
+            @click="$ga.event('navigator', 'go2spotdiffheader', 'navigator')"
+            >鍵盤參與</a
           >
         </nav>
 
@@ -49,14 +57,26 @@
           >
             {{ item.text }}
           </li>
+          <li>
+            <a
+              href="https://bit.ly/3kESSsQ"
+              target="_blank"
+              rel="noopener"
+              @click="$ga.event('navigator', 'go2reportheader', 'navigator')"
+              >拍照回報</a
+            >
+          </li>
+          <li>
+            <a
+              class="go2spotdiff"
+              href="https://bit.ly/3vFXXaj"
+              target="_blank"
+              rel="noopener"
+              @click="$ga.event('navigator', 'go2spotdiffheader', 'navigator')"
+              >鍵盤參與</a
+            >
+          </li>
         </ul>
-        <a
-          href="https://bit.ly/2LrmHyP"
-          target="_blank"
-          rel="noopener"
-          @click="$ga.event('navigator', 'go2report', 'navigator')"
-          >回報</a
-        >
       </div>
     </transition>
   </header>
@@ -165,16 +185,25 @@ li {
   cursor: pointer;
   user-select: none;
 }
-
+/* stylelint-disable no-descending-specificity */
 a {
   border: 2px solid #697f01;
   letter-spacing: 0.7px;
   color: #697f01;
   font-weight: 700;
   transition: background-color 0.2s;
-
   &:hover {
     background-color: #eaf3bf;
+  }
+  & + a {
+    margin-left: 17px;
+  }
+}
+.go2spotdiff {
+  color: #107393;
+  border: 2px solid #107393;
+  &:hover {
+    background-color: #e5f3f3;
   }
 }
 
@@ -191,12 +220,15 @@ a {
 
   li {
     margin-right: 32px;
+    &:last-child {
+      margin-right: 17px;
+    }
   }
 
   a {
     border-radius: 24px;
     font-size: 16px;
-    padding: 4px 20px;
+    padding: 4px 16px;
   }
 }
 
@@ -264,15 +296,20 @@ svg {
   li {
     margin-bottom: 28px;
 
-    &:last-child {
+    &:nth-child(5) {
       margin-bottom: 36px;
     }
   }
-
   a {
+    display: block;
+    width: 144px;
+    border: 2px solid #697f01;
+    box-sizing: border-box;
     border-radius: 35px;
-    font-size: 25px;
-    padding: 14px 48px;
+    font-size: 19px;
+    line-height: 28px;
+    padding: 7px 19px;
+    text-align: center;
   }
 }
 

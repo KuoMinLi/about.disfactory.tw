@@ -6,31 +6,50 @@
     />
     <div class="border-steps">
       <div class="title-steps">
-        <div class="title-steps-text">協助回報違章工廠</div>
+        <div class="title-steps-text">方式1: 協助回報違章工廠</div>
       </div>
       <div class="steps">
-        <div v-for="step in steps" :key="step.num" class="step">
+        <div v-for="step in steps1" :key="step.num" class="step">
           <div class="title">
             <div class="num">{{ step.num }}</div>
             <p>{{ step.title }}</p>
           </div>
-          <picture>
-            <source
-              type="image/webp"
-              :srcset="require(`~/assets/imgs/${step.imgName}.webp`)"
-            />
-            <img :src="require(`~/assets/imgs/${step.imgName}.png`)" alt="" />
-          </picture>
+          <img :src="require(`~/assets/imgs/${step.imgName}.svg`)" alt="" />
+        </div>
+      </div>
+
+      <div class="button-border button-border--blue">
+        <a
+          href="https://bit.ly/3KK1sB4"
+          target="_blank"
+          rel="noopener"
+          @click="$ga.event('introduction', 'go2report3steps', 'intro')"
+          >新增可疑工廠</a
+        >
+      </div>
+    </div>
+    <div class="border-steps border-steps--border-blue">
+      <div class="title-steps">
+        <div class="title-steps-text">方式2: 協助辨識增建工廠</div>
+      </div>
+      <div class="steps">
+        <div v-for="step in steps2" :key="step.num" class="step">
+          <div class="title title--blue">
+            <div class="num num--blue">{{ step.num }}</div>
+            <p>{{ step.title }}</p>
+          </div>
+          <img :src="require(`~/assets/imgs/${step.imgName}.svg`)" alt="" />
         </div>
       </div>
 
       <div class="button-border">
         <a
-          href="https://bit.ly/39WGOhR"
+          class="button-blue"
+          href="https://bit.ly/3LISaq5"
           target="_blank"
           rel="noopener"
-          @click="$ga.event('introduction', 'go2report', 'intro')"
-          >新增可疑工廠</a
+          @click="$ga.event('introduction', 'go2spotdiff3steps', 'intro')"
+          >鍵盤參與回報</a
         >
       </div>
     </div>
@@ -69,11 +88,11 @@ export default {
 
   setup() {
     return {
-      steps: [
+      steps1: [
         {
           num: 1,
           title: '拍照',
-          imgName: 'factory-photo',
+          imgName: 'take-photo',
         },
         {
           num: 2,
@@ -83,7 +102,24 @@ export default {
         {
           num: 3,
           title: '地球公民基金會幫你檢舉',
-          imgName: 'report-help',
+          imgName: 'report-help-1',
+        },
+      ],
+      steps2: [
+        {
+          num: 1,
+          title: '比對五個地點新舊空照圖',
+          imgName: 'play-game',
+        },
+        {
+          num: 2,
+          title: '地球公民基金會補充照片',
+          imgName: 'take-photo',
+        },
+        {
+          num: 3,
+          title: '地球公民基金會批次檢舉',
+          imgName: 'report-help-2',
         },
       ],
     }
@@ -97,7 +133,7 @@ export default {
   text-align: center;
   background-color: #fbfdf0;
   @include media-breakpoint-up(lg) {
-    padding: 60px 40px 80px 40px;
+    padding: 60px 170px 80px;
   }
 
   &__base-subtitle {
@@ -113,10 +149,8 @@ export default {
   box-sizing: border-box;
   border-radius: 5px;
   margin-bottom: 83px;
-
-  @include media-breakpoint-up(xl) {
-    margin-left: 146px;
-    margin-right: 146px;
+  &--border-blue {
+    border: 5px solid#CDE9E4;
   }
 }
 
@@ -164,10 +198,8 @@ export default {
     align-items: flex-start;
     max-width: 1127px;
     margin: 0 auto 0 auto;
-    padding-left: 56px;
-    padding-right: 56px;
-    // margin-left: 56px;
-    // margin-right: 56px;
+    padding-left: 42px;
+    padding-right: 42px;
   }
 }
 
@@ -184,25 +216,27 @@ export default {
     max-width: 333px;
     margin: 0 auto;
   }
-
-  p {
-    font-size: 22px;
-    color: #4a5613;
-  }
 }
 
 .title {
   display: flex;
   justify-content: center;
+  font-size: 22px;
+  color: #4a5613;
   align-items: center;
+  text-align: left;
   margin-bottom: 8px;
   @include media-breakpoint-up(lg) {
     margin-bottom: 24px;
     justify-content: flex-start;
   }
+  &--blue {
+    color: #105f79;
+  }
 }
 
 .num {
+  color: #4a5613;
   background-color: #eaf3bf;
   width: 45px;
   height: 45px;
@@ -213,8 +247,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 15px;
   flex-shrink: 0;
+  &--blue {
+    color: #164959;
+    background: #def4ff;
+  }
 }
 
 .action {
@@ -275,6 +313,12 @@ a {
 
   &:hover {
     background-color: #4a5613;
+  }
+}
+.button-blue {
+  background: #107393;
+  &:hover {
+    background: darken(#107393, 10%);
   }
 }
 </style>
