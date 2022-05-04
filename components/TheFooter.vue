@@ -103,7 +103,8 @@
                 <div class="group-member">
                   <p>
                     ddio、chiahe、Joycelin、laiTzan、chelin、jenhaoyang、chihao、Angel、安東尼、Bryce、笑笑、積丹尼、誠夏、Stasia、慈忻、Kai、昱伶、Tai、Wuulong、Carmen、fly、土撥鼠、mhshih、JinWen、Johnson、John
-                    Huang、zyan、tai、slayer、mg、robin
+                    Huang、zyan、tai、slayer、mg、robin、星穎、ichieh、isabel、Tiff、雅安、Jay
+                    Lo、mcdlee、CRW、Guo-Jim
                   </p>
                 </div>
               </div>
